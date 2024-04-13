@@ -23,14 +23,11 @@
     }
 
     internal class CreateProductCommandHandler
-        (IDocumentSession session, ILogger<CreateProductCommandHandler> logger) :
+        (IDocumentSession session) :
         ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
-
-
-            logger.LogInformation("CreateProductCommandHandler.Handel called with {@Command}", command);
 
             //Create product entity from command obect 
 
