@@ -1,7 +1,7 @@
 ﻿namespace Catalog.API.Products.CreateProduct;
 
 
-public record CreateProdcutRequest(string Name,
+public record CreateProductRequest(string Name,
                                       List<string> Category,
                                       string Description,
                                       string ImageFile,
@@ -14,7 +14,7 @@ public class CreateProductEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/products", async (CreateProdcutRequest request, ISender sender) =>
+        app.MapPost("/products", async (CreateProductRequest request, ISender sender) =>
         {
             var command = request.Adapt<CreateProductCommand>();
 
